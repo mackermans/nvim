@@ -1,7 +1,7 @@
-require 'options'
-require 'keymaps'
-require 'autocmds'
-require 'lazy'
+require 'configs.options'
+require 'configs.keymaps'
+require 'configs.autocmds'
+require 'configs.lazy'
 
 -- [[ Configure and install plugins ]]
 --
