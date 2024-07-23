@@ -1,7 +1,7 @@
 require 'options'
 require 'keymaps'
 require 'autocmds'
-require 'setup-plugin-manager'
+require 'lazy'
 
 -- [[ Configure and install plugins ]]
 --
