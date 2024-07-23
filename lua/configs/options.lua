@@ -67,3 +67,5 @@ vim.opt.scrolloff = 10
 -- Set highlight on search
 -- See also :h nohlsearch
 vim.opt.hlsearch = true
+
+vim.opt.termguicolors = true
