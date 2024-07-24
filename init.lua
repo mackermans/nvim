@@ -51,7 +51,9 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
       local miniFiles = require 'mini.files'
       miniFiles.setup()
-      vim.keymap.set('n', '<leader>e', miniFiles.open, { desc = '[E]xplore' })
+      vim.keymap.set('n', '<leader>e', function()
+        miniFiles.open(vim.api.nvim_buf_get_name(0))
+      end, { desc = '[E]xplore' })
     end,
   },
   { -- Highlight, edit, and navigate code
