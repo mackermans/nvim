@@ -1,7 +1,7 @@
-require 'configs.options'
-require 'configs.keymaps'
-require 'configs.autocmds'
-require 'configs.lazy'
+require 'batman.configs.options'
+require 'batman.configs.keymaps'
+require 'batman.configs.autocmds'
+require 'batman.configs.lazy'
 
 -- [[ Configure and install plugins ]]
 --
@@ -72,7 +72,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
-  { import = 'plugins' },
+  { import = 'batman.plugins' },
 }, {
   ui = {
     icons = {
