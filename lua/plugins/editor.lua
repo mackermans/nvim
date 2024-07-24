@@ -1,4 +1,7 @@
 return {
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
   -- Shows pending keybinds.
   {
     'folke/which-key.nvim',
