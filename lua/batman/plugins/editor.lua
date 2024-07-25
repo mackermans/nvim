@@ -11,7 +11,6 @@ return {
   },
 
   -- Better Around/Inside textobjects
-  -- Examples:
   --  - va)  - [V]isually select [A]round [)]paren
   --  - yilq - [Y]ank [I]nside [L]ast [Q]uote
   --  - ci'  - [C]hange [I]nside [']quote
@@ -52,7 +51,16 @@ return {
     },
   },
 
-  -- Shows pending keybinds.
+  -- Add/delete/replace surroundings (brackets, quotes, etc.)
+  -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+  -- - sd'   - [S]urround [D]elete [']quotes
+  -- - sr)'  - [S]urround [R]eplace [)] [']
+  {
+    'echasnovski/mini.surround',
+    opts = {},
+  },
+
+  -- Shows pending keybinds
   {
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
