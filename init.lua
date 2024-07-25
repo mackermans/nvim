@@ -46,14 +46,6 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
-      local miniFiles = require 'mini.files'
-      miniFiles.setup()
-      vim.keymap.set('n', '<leader>e', function()
-        miniFiles.open(vim.api.nvim_buf_get_name(0))
-      end, { desc = '[E]xplore' })
     end,
   },
 

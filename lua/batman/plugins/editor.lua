@@ -10,6 +10,21 @@ return {
     opts = { signs = false },
   },
 
+  -- File explorer
+  {
+    'echasnovski/mini.files',
+    keys = {
+      {
+        '<leader>e',
+        function()
+          require('mini.files').open(vim.api.nvim_buf_get_name(0))
+        end,
+        mode = 'n',
+        desc = '[E]xplore',
+      },
+    },
+  },
+
   -- Shows pending keybinds.
   {
     'folke/which-key.nvim',
