@@ -9,4 +9,10 @@ return {
       require('bufferline').setup {}
     end,
   },
+
+  -- Statusline
+  {
+    'echasnovski/mini.statusline',
+    opts = {},
+  },
 }
