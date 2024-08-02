@@ -97,10 +97,30 @@ return { -- Autocompletion
           end
         end, { 'i', 's' }),
 
-        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-        --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        -- Reject suggestion and insert newline
+        ['<CR>'] = function(fallback)
+          cmp.abort()
+          fallback()
+        end,
+
+        -- Confirm with tab, and if no entry is selected, will confirm the first item
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            local entry = cmp.get_selected_entry()
+            if not entry then
+              cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+            end
+            cmp.confirm()
+          else
+            fallback()
+          end
+        end, { 'i', 's', 'c' }),
       },
       sources = {
+        {
+          name = 'copilot',
+          require('copilot_cmp.comparators').prioritize,
+        },
         {
           name = 'lazydev',
           -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
