@@ -1,4 +1,14 @@
 return {
+  -- Run tsc in your Neovim and see the results in the quickfix list
+  {
+    'dmmulroy/tsc.nvim',
+    config = function()
+      require('tsc').setup {
+        use_trouble_qflist = true,
+      }
+    end,
+  },
+
   -- LSP Configuration & Plugins
   {
     'neovim/nvim-lspconfig',
