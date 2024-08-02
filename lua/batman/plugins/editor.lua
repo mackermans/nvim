@@ -10,6 +10,25 @@ return {
     opts = { signs = false },
   },
 
+  -- Incremental rename
+  {
+    'smjonas/inc-rename.nvim',
+    config = function()
+      require('inc_rename').setup {}
+    end,
+    keys = {
+      {
+        '<leader>cr',
+        function()
+          return ':IncRename ' .. vim.fn.expand '<cword>'
+        end,
+        desc = 'LSP: [C]ode [R]ename',
+        mode = 'n',
+        expr = true,
+      },
+    },
+  },
+
   -- Better Around/Inside textobjects
   --  - va)  - [V]isually select [A]round [)]paren
   --  - yilq - [Y]ank [I]nside [L]ast [Q]uote
