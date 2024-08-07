@@ -6,7 +6,7 @@ return {
     {
       '<leader>cf',
       function()
-        require('conform').format { async = true, lsp_fallback = true }
+        require('conform').format { async = true }
       end,
       mode = '',
       desc = '[C]ode [F]ormat buffer',
@@ -21,7 +21,7 @@ return {
       local disable_filetypes = { c = true, cpp = true }
       return {
         timeout_ms = 1000,
-        lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+        -- lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
       }
     end,
     formatters_by_ft = {
