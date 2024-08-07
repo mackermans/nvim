@@ -7,6 +7,14 @@ return {
     enabled = vim.fn.has 'nvim-0.10.0' == 1,
   },
 
+  -- Show code context
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = {
+      max_lines = 3,
+    },
+  },
+
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
