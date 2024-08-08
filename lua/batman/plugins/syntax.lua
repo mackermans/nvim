@@ -8,28 +8,21 @@ return {
   },
 
   -- Highlight colors
-  -- #FFF
-  -- #FF0000
-  -- #FF000055
-  -- rgb(0, 0, 255)
-  -- rgba(0, 255, 0, 0.5)
-  -- hsl(120, 100%, 70%)
-  -- text-indigo-500
   {
     'NvChad/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup {
         filetypes = { '*' },
         user_default_options = {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          names = true, -- "Name" codes like Blue
-          RRGGBBAA = true, -- #RRGGBBAA hex codes
-          rgb_fn = true, -- CSS rgb() and rgba() functions
-          hsl_fn = true, -- CSS hsl() and hsla() functions
+          RGB = true, -- #RGB hex codes: #FA0
+          RRGGBB = true, -- #RRGGBB hex codes: #FF0000
+          names = true, -- "Name" codes: Blue
+          RRGGBBAA = true, -- #RRGGBBAA hex codes: #FF000055
+          rgb_fn = true, -- CSS rgb() and rgba() functions: rgb(0, 0, 255) rgba(0, 255, 0, 0.5)
+          hsl_fn = true, -- CSS hsl() and hsla() functions: hsl(120, 100%, 70%)
           css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
           css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-          tailwind = true,
+          tailwind = true, -- Enable tailwind color utility classes: text-indigo-500
           -- Available modes: foreground, background
           mode = 'background', -- Set the display mode.
         },
