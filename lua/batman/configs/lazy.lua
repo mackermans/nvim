@@ -24,6 +24,13 @@ require('lazy').setup {
   -- automatically check for plugin updates
   checker = { enabled = true },
 
+  install = {
+    -- install missing plugins at startup
+    missing = true,
+    -- apply existing colorscheme before plugin installation at startup
+    colorscheme = { 'catppuccin', 'tokyonight-night' },
+  },
+
   -- customize icons
   ui = {
     icons = {
