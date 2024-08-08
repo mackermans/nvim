@@ -1,4 +1,23 @@
 return {
+  -- Git blame functionality
+  -- Only used for copying commit and file URLs
+  {
+    'f-person/git-blame.nvim',
+    event = 'VeryLazy',
+    keys = {
+      { '<leader>gY', ':GitBlameCopyCommitURL<cr>', desc = 'Copy Git Commit URL', mode = { 'n' } },
+      { '<leader>gy', ':GitBlameCopyFileURL<cr>', desc = 'Copy Git File URL', mode = { 'n', 'v' } },
+    },
+    opts = {
+      enabled = false,
+      use_blame_commit_file_urls = true,
+    },
+    config = function(_, opts)
+      vim.g.gitblame_date_format = '%r'
+      require('gitblame').setup(opts)
+    end,
+  },
+
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   {
     'lewis6991/gitsigns.nvim',
