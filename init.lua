@@ -1,4 +1,5 @@
 require 'batman.configs.options'
+require 'batman.configs.filetypes'
 require 'batman.configs.keymaps'
 require 'batman.configs.autocmds'
 require 'batman.configs.lazy'
