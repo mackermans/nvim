@@ -4,9 +4,13 @@ return {
     'dmmulroy/tsc.nvim',
     config = function()
       require('tsc').setup {
+        pretty_errors = false,
         use_trouble_qflist = true,
       }
     end,
+    keys = {
+      { '<leader>ct', '<cmd>TSC<cr>', desc = '[C]heck TypeScript [T]ypes', ft = { 'typescript', 'typescriptreact' } },
+    },
   },
 
   -- LSP Configuration & Plugins
