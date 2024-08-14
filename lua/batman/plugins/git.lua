@@ -78,4 +78,23 @@ return {
       end,
     },
   },
+
+  -- Diff editor
+  {
+    'julienvincent/hunk.nvim',
+    cmd = { 'DiffEditor' },
+    config = function()
+      require('hunk').setup {
+        ui = {
+          tree = {
+            -- Mode can either be `nested` or `flat`
+            mode = 'nested',
+            width = 35,
+          },
+          --- Can be either `vertical` or `horizontal`
+          layout = 'vertical',
+        },
+      }
+    end,
+  },
 }
