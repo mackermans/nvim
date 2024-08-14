@@ -2,6 +2,16 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- Floating terminal
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = true,
+    keys = {
+      { '<leader>tt', '<CMD>ToggleTerm<CR>', desc = 'Toggle Terminal' },
+    },
+  },
+
   -- Highlight todo, notes, etc in comments
   {
     'folke/todo-comments.nvim',
