@@ -35,3 +35,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '[b', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bdel<cr>', { desc = '[B]uffer [D]elete' })
+
+-- Diagnostic floating window
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.goto_prev()
+end, { desc = 'Jump to previous diagnostic' })
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.goto_next()
+end, { desc = 'Jump to next diagnostic' })
