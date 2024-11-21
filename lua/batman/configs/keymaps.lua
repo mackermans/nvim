@@ -43,3 +43,8 @@ end, { desc = 'Jump to previous diagnostic' })
 vim.keymap.set('n', ']d', function()
   vim.diagnostic.goto_next()
 end, { desc = 'Jump to next diagnostic' })
+
+-- Remap j and k to move by visual lines (including wrapped) when used without
+-- a count, but retain their original behavior when used with a count
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
