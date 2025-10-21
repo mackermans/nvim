@@ -105,9 +105,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-      local lspconfig = require 'lspconfig'
-
-      lspconfig.eslint.setup {
+      vim.lsp.config('eslint', {
         flags = {
           allow_incremental_sync = false,
           debounce_text_changes = 1000,
@@ -124,18 +122,20 @@ return {
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
           workingDirectories = { mode = 'auto' },
         },
-      }
+      })
 
-      lspconfig.jsonls.setup {
+      vim.lsp.config('jsonls', {
         settings = {
           json = {
             schemas = require('schemastore').json.schemas(),
             validate = { enable = true },
           },
         },
-      }
+      })
 
-      lspconfig.lua_ls.setup {
+      local lspconfig = require 'lspconfig'
+
+      vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
             completion = {
@@ -143,11 +143,11 @@ return {
             },
           },
         },
-      }
+      })
 
-      lspconfig.statix.setup {}
+      vim.lsp.config('statix', {})
 
-      lspconfig.vtsls.setup {
+      vim.lsp.config('vtsls', {
         init_options = {
           preferences = {
             -- includeInlayParameterNameHints = 'all',
@@ -170,9 +170,9 @@ return {
             completeFunctionCalls = true,
           },
         },
-      }
+      })
 
-      lspconfig.yamlls.setup {
+      vim.lsp.config('yamlls', {
         settings = {
           yaml = {
             schemaStore = {
@@ -185,7 +185,7 @@ return {
             schemas = require('schemastore').yaml.schemas(),
           },
         },
-      }
+      })
     end,
   },
 }
